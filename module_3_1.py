@@ -1,21 +1,20 @@
 calls = 0
-
 def count_calls():
     global calls
     calls += 1
-    return calls
-
-def string_info(my_string):
+def string_info(my_str):
     count_calls()
-    m = (len(my_string), my_string.upper(), my_string.lower())
-    return m
-
-print(string_info("Urban"))
-
-def is_contains(my_str, my_list):
+    t = (len(my_str), my_str.upper(), my_str.lower())    
+    return t
+def is_contains(my_string, my_list):
     count_calls()
-    n = my_str in my_list
+    for i in my_list:
+        if my_string.upper() == i.upper():
+            n = True
+        else:
+            n = False
     return n
+
 
 print(string_info('Capybara'))
 print(string_info('Armageddon'))
